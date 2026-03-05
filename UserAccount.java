@@ -13,23 +13,22 @@ public class UserAccount {
         return account_no;
     }
 
-    public void setAccount_no(String account_no) {
-        this.account_no = account_no;
-    }
-
-    public String getPin() {
-        return pin;
-    }
-
-    public void setPin(String pin) {
-        this.pin = pin;
-    }
-
     public double getBalance() {
         return balance;
     }
 
-    public void setBalance(double balance) {
-        this.balance = balance;
+    public boolean isValidPin(String pin)
+    {
+        return pin.equals(this.pin);
+    }
+
+    public void deposit(double amt)
+    {
+        balance=balance+amt;
+    }
+
+    public void withdraw(double amt)
+    {
+        balance-=amt;
     }
 }
